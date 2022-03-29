@@ -1,12 +1,8 @@
 import re
 import json
-def tweets():
-    json_file = open('farmers_protest.json', "r")
+def tweets(datos):
     lista_tweets = []
     menor = 0
-    print(json_file)
-    data = json_file.readlines()
-    datos = json.loads(json.dumps(data))
     for i in datos:
         retweet = re.search('retweetCount',i)
         final = retweet.span()[1]
@@ -74,4 +70,3 @@ def tweets():
     #  for i in data:
     #      print(i)
     #  json_file.close()
-tweets()
